@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+import CurrencyDropdown from '../components/Currency';
 
 const AllocationForm = (props) => {
     const { dispatch, remaining, budget } = useContext(AppContext);
@@ -71,12 +72,7 @@ const AllocationForm = (props) => {
                     </input>
 
                     <div style={{ marginLeft: '2rem' }}>
-                        <select className="custom-select" id="CurrencySelect" required='required' placeholder='Currency($ Dolar)' onChange={(event) => setAction(event.target.value)}>
-                            <option defaultValue value="CurrencyDolar" name="CurrencyDolar" selected>$ Dolar</option>
-                            <option value="CurrencyPound" name="CurrencyPound">£ Pound</option>
-                            <option value="CurrencyEuro" name="CurrencyEuro">€ Euro</option>
-                            <option value="CurrencyRuppee" name="CurrencyRuppee">₹ Ruppee</option>
-                        </select>
+                        <CurrencyDropdown/>
                     </div>
 
 
