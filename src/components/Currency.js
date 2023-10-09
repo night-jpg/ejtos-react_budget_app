@@ -25,14 +25,13 @@ const CurrencyDropdown = () => {
     ];
     const handleChange = (event) => {
         setSelectedCurrency({option: event.target.options[event.target.selectedIndex].text,value: event.target.value});
-        console.log(event.target.options[event.target.selectedIndex].text.split(" ")[0]);
+        console.log(event.target);
         dispatch({ type: 'CHG_CURRENCY', payload: event.target.options[event.target.selectedIndex].text.split(" ")[0]});
     };
 
     const dropdownStyles = {
         backgroundColor: '#93e499',
         color: '#f6fbee',
-        padding: '5px',
         borderRadius: '5px',
         fontSize: '16px',
     };
@@ -50,7 +49,7 @@ const CurrencyDropdown = () => {
     };
 
     return (
-        <div>
+        <div className='alert alert-secondary' style={{marginBottom: '0px'}}>
             <select
                 className="currency-dropdown"
                 value={selectedCurrency.value}
